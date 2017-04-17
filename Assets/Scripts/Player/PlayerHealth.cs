@@ -22,6 +22,8 @@ public class PlayerHealth : MonoBehaviour
     bool isDead;
     bool damaged;
 
+	public bool gameIsRunning = false;
+
 
     void Awake ()
     {
@@ -84,4 +86,30 @@ public class PlayerHealth : MonoBehaviour
     {
         SceneManager.LoadScene (0);
     }
+
+	public void Win ()
+	{
+		if (!gameIsRunning) {
+			return;
+		}
+
+		gameIsRunning = false;
+		// Set the death flag so this function won't be called again.
+		isDead = true;
+
+		// Turn off any remaining shooting effects.
+		playerShooting.DisableEffects ();
+
+		// Tell the animator that the player is dead.
+		anim.SetTrigger ("Die");
+
+		// Set the audiosource to play the death clip and play it (this will stop the hurt sound from playing).
+//		playerAudio.clip = winClip;
+//		playerAudio.Play ();
+//		AkSoundEngine.PostEvent ("mx_game_win", GameObject.Find ("WwiseGlobal"));
+
+		// Turn off the movement and shooting scripts.
+		playerMovement.enabled = false;
+		playerShooting.enabled = false;
+	}
 }

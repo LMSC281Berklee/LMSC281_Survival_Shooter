@@ -1,4 +1,10 @@
-﻿using UnityEngine;
+﻿//LMSC 281
+//Augustus Rivera
+//Survival Shooter
+//Score Manager
+
+
+using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 

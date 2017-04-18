@@ -23,15 +23,14 @@ public class TimeManager : MonoBehaviour {
 	void Update ()
 	{
 		//Debug.Log (Time.timeScale);
-		if (Time.timeScale == 1 /*&& health.gameIsRunning*/) {
+		if (Time.timeScale == 1 && health.gameIsRunning) {
 
 			timeRemaining -= Time.deltaTime;
 			text.text = "Time Until Dawn: " + (int)timeRemaining;
 		}
 
-		if (timeRemaining <= 0.5 /*&& health.gameIsRunning*/) {
+		if (timeRemaining <= 0.5 && health.gameIsRunning) {
 			health.Win ();
-
 		}
 
 			//AkSoundEngine.SetRTPCValue ("time_remaining_percentage", timeRemaining / initialSettingOfTimeRemaining * 100.0f, GameObject.Find ("WwiseGlobal"));

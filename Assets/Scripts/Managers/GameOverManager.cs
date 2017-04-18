@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class GameOverManager : MonoBehaviour
 {
     public PlayerHealth playerHealth;
+	public TimeManager timer;
 	public float restartDelay = 5f;
 
     Animator anim;
@@ -28,5 +29,14 @@ public class GameOverManager : MonoBehaviour
 				SceneManager.LoadScene("Level 01");
 			}
         }
+
+		if(playerHealth.currentHealth > 0){
+
+			if (timer.timeRemaining < 0.5) {
+				anim.SetTrigger ("GameOverWin");
+				playerHealth.isDead = true;
+			}
+
+		}
     }
 }

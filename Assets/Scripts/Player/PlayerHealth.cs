@@ -19,7 +19,7 @@ public class PlayerHealth : MonoBehaviour
     AudioSource playerAudio;
     PlayerMovement playerMovement;
     PlayerShooting playerShooting;
-    bool isDead;
+    public bool isDead;
     bool damaged;
 
 	public bool gameIsRunning = false;
@@ -32,6 +32,7 @@ public class PlayerHealth : MonoBehaviour
         playerMovement = GetComponent <PlayerMovement> ();
         playerShooting = GetComponentInChildren <PlayerShooting> ();
         currentHealth = startingHealth;
+		gameIsRunning = true;
     }
 
 
@@ -101,7 +102,7 @@ public class PlayerHealth : MonoBehaviour
 		playerShooting.DisableEffects ();
 
 		// Tell the animator that the player is dead.
-		anim.SetTrigger ("Die");
+		//anim.SetTrigger ("Die");
 
 		// Set the audiosource to play the death clip and play it (this will stop the hurt sound from playing).
 //		playerAudio.clip = winClip;

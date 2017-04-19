@@ -1,7 +1,7 @@
 ﻿//LMSC 281
 //Augustus Rivera
 //Survival Shooter
-//Gamer Over Manager
+//Game Over Manager
 
 
 using UnityEngine;
@@ -9,6 +9,8 @@ using UnityEngine;
 public class GameOverManager : MonoBehaviour
 {
     public PlayerHealth playerHealth;
+
+
 	public float restartDelay = 5f;
 
 
@@ -19,6 +21,8 @@ public class GameOverManager : MonoBehaviour
     void Awake()
     {
         anim = GetComponent<Animator>();
+
+
     }
 
 
@@ -35,5 +39,6 @@ public class GameOverManager : MonoBehaviour
 				Application.LoadLevel (Application.loadedLevel);
 			}
         }
+
     }
 }

@@ -2,6 +2,8 @@
 using UnityEngine.UI;
 using System.Collections;
 
+//JC edit
+
 public class TimeManager : MonoBehaviour {
 
 	public float timeRemaining = 120.0f;
